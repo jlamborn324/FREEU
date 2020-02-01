@@ -5,6 +5,8 @@ from .views import (
     PostListView, 
     PostDetailView, 
     PostCreateView,
+    SearchResultsView,
+    
 )
 from . import views
 
