@@ -1,0 +1,10 @@
+{% extends "marketplace/base.html" %}
+{% block content %}
+    {% for item in items%}
+        <p>User: {{ item.User }}</p>
+        <p>Item: {{ item.Item }}</p>
+        <p>Condition: {{ item.Condition }}</p>
+
+    {% endfor %}
+    
+{% endblock content %}

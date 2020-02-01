@@ -1,9 +1,20 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
+
+items = [
+        {"User": "John", 
+        "Item": "Dog", 
+        "Condition":"bad bro"
+        },
+
+        {"User": "Nancy", 
+        "Item": "flashlight", 
+        "Condition":"Great"}
+
+]
 
 def home(request):
-    return HttpResponse('<h1>Hello World</h1>')
+    return render(request, 'marketplace/home.html', {'items': items})
 
 
-# Create your views here.
+# Create your views he
