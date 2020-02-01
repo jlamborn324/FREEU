@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from .models import ItemPost
 
 
@@ -18,8 +19,16 @@ def home(request):
 
     context = {
         'posts': ItemPost.objects.all()
-    }
+    } 
     return render(request, 'marketplace/home.html', context)
+
+class PostListView(ListView): 
+    model = ItemPost
+    template_name = 'marketplace/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+
 
 
 # Create your views he

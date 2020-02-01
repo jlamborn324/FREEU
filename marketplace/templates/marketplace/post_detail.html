@@ -1,0 +1,13 @@
+{% extends "marketplace/base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ object.author }}</a>
+      <small class="text-muted">{{ object.date_posted }}</small>
+    </div>
+    <h2 class ="article-title">{{ object.title }}</h2>
+    <p class="article-content">Condition: {{ object.condition }}</p>
+  </div>
+</article>        
+{% endblock content %}
