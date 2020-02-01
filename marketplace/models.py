@@ -8,6 +8,3 @@ class ItemPost(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     condition = models.CharField(max_length=20)
-
-    def __str(self):    
-        return self.title

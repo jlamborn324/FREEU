@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import (ListView, 
+DetailView, 
+CreateView,
+)
 from .models import ItemPost
 
 
@@ -29,7 +32,14 @@ class PostListView(ListView):
     ordering = ['-date_posted']
 
 class PostDetailView(DetailView): 
+    model = ItemPost 
+
+class PostCreateView(CreateView): 
     model = ItemPost
+    fields =['title', 'condition']
+
+
+    
 
 
 
