@@ -61,11 +61,11 @@ nav a:hover::before {
 /* ################################### */
 
 .blogShort{ border-bottom:1px solid #ddd;}
-.add{ padding: 10%; height: 300px;}
+.add{ padding: 20%; height: 300px;}
 
 .nav-sidebar { 
     width: 100%;
-    padding: 8px 0; 
+    padding: 20px 0; 
     border-right: 1px solid #ddd;
 }
 .nav-sidebar a {
@@ -91,21 +91,72 @@ nav a:hover::before {
     text-overflow: ellipsis; 
 }
 
-.btn-blog {
-    color: #ffffff;
-    background-color: #37d980;
-    border-color: #37d980;
-    border-radius:0;
-    margin-bottom:10px
-}
-.btn-blog:hover,
-.btn-blog:focus,
-.btn-blog:active,
-.btn-blog.active,
-.open .dropdown-toggle.btn-blog {
-    color: white;
-    background-color:#34ca78;
-    border-color: #34ca78;
-}
+
  h2{color:#34ca78;}
  .margin10{margin-bottom:10px; margin-right:10px;}
+ .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .article-title {
+    color: #444444;
+  }
+  
+  a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+  .active-pink-4 {
+    width: 400px;
+    margin: auto;    
+  }
+
+.active-pink-4 input[type=text]:focus:not([readonly]) {
+border: 1px solid #f48fb1;
+box-shadow: 0 0 0 1px #f48fb1;
+
+}
