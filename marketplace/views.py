@@ -28,7 +28,7 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
-class PostDetailView(ListView): 
+class PostDetailView(DetailView): 
     model = ItemPost
 
 
