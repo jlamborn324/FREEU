@@ -2,9 +2,13 @@
 
 {% block content %}
   <div class="media-body">
-    <div class="article-metadata">
+    div class="article-metadata">
       <a class="mr-2" href="#">{{ object.author }}</a>
       <small class="text-muted">{{ object.date_posted }}</small>
+      {% if object.author == user %}
+        <a class = "btn btn-secondary btn-sm mt-1 mb-1"href = "{% url 'itempost-update' object.id %}">Update</a>
+        <a class = "btn btn-danger btn-sm mt-1 mb-1"href = "{% url 'itempost-delete' object.id %}">Delete</a>
+      {% endif %}
     </div>
     <h2 class ="article-title">{{ object.title }}</h2>
     <p class="article-content">Condition: {{ object.condition }}</p>

@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (ListView, 
 DetailView, 
 CreateView,
+UpdateView,  
+DeleteView, 
 )
 from .models import ItemPost
 from django.db.models import Q
@@ -41,7 +44,6 @@ class SearchResultsView(ListView):
 
 
 
-
 class PostListView(ListView): 
     model = ItemPost
     template_name = 'marketplace/home.html'
@@ -51,13 +53,38 @@ class PostListView(ListView):
 class PostDetailView(DetailView): 
     model = ItemPost 
 
-class PostCreateView(CreateView): 
+class PostCreateView(LoginRequiredMixin, CreateView): 
     model = ItemPost
     fields =['title', 'condition']
 
     def form_valid(self, form):
         form.instance.author = self.request.user 
         return super().form_valid(form)
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): 
+    model = ItemPost
+    fields =['title', 'condition']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user 
+        return super().form_valid(form)
+
+    def test_func(self): 
+        ItemPost = self.get_object()
+        if self.request.user == ItemPost.author: 
+            return True  
+        return False 
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): 
+    model = ItemPost
+    success_url = '/' 
+    
+    def test_func(self): 
+        ItemPost = self.get_object()
+        if self.request.user == ItemPost.author: 
+            return True  
+        return False 
+     
      
 
 
