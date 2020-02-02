@@ -55,6 +55,12 @@ class PostCreateView(CreateView):
     model = ItemPost
     fields =['title', 'condition']
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user 
+        return super().form_valid(form)
+     
+
+
 
     
 
