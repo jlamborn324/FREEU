@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 from users import views as user_views
+from . import settings as setting
 
 
 urlpatterns = [
@@ -30,4 +31,4 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('chat/', include('chat.urls')),
 
-]
+] + static(setting.MEDIA_URL, document_root=setting.MEDIA_ROOT)

@@ -50,16 +50,19 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+
 class PostDetailView(DetailView): 
     model = ItemPost 
 
+
 class PostCreateView(LoginRequiredMixin, CreateView): 
     model = ItemPost
-    fields =['title', 'condition']
+    fields =['title', 'condition', 'item_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user 
         return super().form_valid(form)
+
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): 
     model = ItemPost
@@ -75,9 +78,11 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True  
         return False 
 
+
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): 
     model = ItemPost
     success_url = '/' 
+
     
     def test_func(self): 
         ItemPost = self.get_object()
@@ -85,12 +90,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True  
         return False 
      
-     
-
-
-
-    
-
-
-
-# Create your views he
