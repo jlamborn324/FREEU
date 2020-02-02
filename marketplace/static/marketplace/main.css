@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
 }
 
-header {
+/* header {
     background: #ABFF91
 }
 header::after {
@@ -54,10 +54,10 @@ nav a::before{
     top: 0;
     width: 0%;
     transition: all ease-in-out 250ms;
-}
-nav a:hover::before {
+} */
+/* nav a:hover::before {
     width: 100%;
-}
+} */
 /* ################################### */
 
 .blogShort{ border-bottom:1px solid #ddd;}
@@ -95,11 +95,15 @@ nav a:hover::before {
  h2{color:#34ca78;}
  .margin10{margin-bottom:10px; margin-right:10px;}
  .content-section {
+    margin: 0 auto;
     background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
+    width: 75%;
+    height:100%;
+    
   }
   
   .article-title {
@@ -150,7 +154,7 @@ nav a:hover::before {
   }
   @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
-  .active-pink-4 {
+  /* .active-pink-4 {
     width: 800px;
     margin: auto;    
   }
@@ -159,4 +163,4 @@ nav a:hover::before {
 border: 1px solid #f48fb1;
 box-shadow: 0 0 0 1px #f48fb1;
 
-}
+} */
