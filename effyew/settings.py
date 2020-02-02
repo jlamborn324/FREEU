@@ -144,7 +144,15 @@ LOGIN_URL = 'login'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
+<<<<<<< HEAD
 
 
+=======
+PROJECT_DIR = os.path.dirname(__file__) # this is not Django setting.
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_DIR, "templates"),
+    # here you can add another templates directory if you wish.
+)
+>>>>>>> parent of cca91af... more small settings changes
 
 django_heroku.settings(locals())
