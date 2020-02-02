@@ -1,0 +1,37 @@
+{% extends "marketplace/base.html" %}
+
+{% block content %}
+<!-- <div class="active-pink-3 active-pink-4 mb-4">
+    <input class="form-control" type="text" placeholder="What Are You Looking For?" aria-label="Search">
+  </div> -->
+{% for post in posts %}
+
+
+
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" ><strong>Seller:</strong> {{ post.author }}</a>
+      <small class="text-muted">{{ post.date_posted }}</small>
+    </div>
+    {% if post.item_image %}
+        <div class = "article-img">
+            <img src="{{ post.item_image.url }}">
+        </div>
+        
+    {% endif %}
+    <h2><a class="article-title" href="{% url 'itempost-detail' post.id %}">{{ post.title }}</a></h2>
+    <p class="article-content">Condition: {{ post.condition }}</p>
+  </div>
+</article>
+{% endfor %}
+        <!-- <p>Author: {{ post.author }}</p>
+        <p>Title: {{ post.title }}</p>
+        <p>Date Posted: {{ post.date_posted }}</p>
+        <p>Condition: {{ post.condition }}</p> -->
+
+
+                
+                  
+                
+{% endblock content %}

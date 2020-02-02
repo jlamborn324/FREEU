@@ -1,0 +1,30 @@
+{% extends "marketplace/base.html" %}
+
+{% block content %}
+
+{% for post in object_list %}
+
+
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" ><strong>Seller:</strong> {{ post.author }}</a>
+      <small class="text-muted">{{ post.date_posted }}</small>
+    </div>
+    {% if post.item_image %}
+        <div class = "article-img">
+            <img src="{{ post.item_image.url }}">
+        </div>
+        
+    {% endif %}
+    <h2><a class="article-title" href="{% url 'itempost-detail' post.id %}">{{ post.title }}</a></h2>
+    <p class="article-content">Condition: {{ post.condition }}</p>
+  </div>
+</article>
+{% endfor %}
+   
+
+                
+                  
+                
+{% endblock content %}
