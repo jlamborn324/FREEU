@@ -58,6 +58,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView): 
     model = ItemPost
     fields =['title', 'condition', 'item_image']
+    template_name = 'marketplace/ItemPost_form.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user 
