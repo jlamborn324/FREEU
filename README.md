@@ -11,3 +11,9 @@ Free.U aims to bridge this gap and connect people who have unwanted usable items
 
 Follow us on Instagram @free.u_2020 for our journey!
 
+
+![image](https://user-images.githubusercontent.com/46695917/74067521-721c5380-49c7-11ea-9b66-48c4787a6419.png) 
+
+![image](https://user-images.githubusercontent.com/46695917/74067610-aabc2d00-49c7-11ea-9f0b-4e78ad4d0b67.png)
+
+![image](https://user-images.githubusercontent.com/46695917/74067655-bc053980-49c7-11ea-8a66-047009cf88f5.png)
