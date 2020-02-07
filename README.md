@@ -1,3 +1,6 @@
+
+![freeuheader](https://user-images.githubusercontent.com/46695917/74067420-3aada700-49c7-11ea-8fae-bc69997d5e45.jpg)
+
 ## Inspiration
 Every American generates 2,555 pounds of waste per year and 20.4% of that waste can actually be repaired or repurposed. Although these are concrete statistics, the problem remains rather abstract to grasp - how does one affect the problem of waste? How can one reduce waste generated?
 
