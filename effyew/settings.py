@@ -33,9 +33,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['freeu.herokuapp.com']
+ALLOWED_HOSTS = [https://freeu.herokuapp.com/]
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -145,5 +146,17 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
 
-
 # django_heroku.settings(locals())
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+# https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_REGION_NAME = 'us-east-2' #change to your region
+AWS_S3_SIGNATURE_VERSION = 's3v4'
