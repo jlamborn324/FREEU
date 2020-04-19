@@ -15,8 +15,35 @@
       <small class="text-muted">{{ post.date_posted }}</small>
     </div>
     {% if post.item_image %}
+      <script>
+          // console.log("SRC + " + document.getElementById("myimage").src)
+          var wholelink = "{{ post.item_image.url }}"  //original link
+          var regex = /.jpg/i
+          var endposition = wholelink.search(regex) + 4
+
+          var imagelink = wholelink.slice(38, endposition)
+
+          var imageRequest =JSON.stringify({  // creates json
+            bucket:"freeu-images", 
+            key: imagelink,
+            edits: {
+              grayscale: true
+            }
+          })
+          // console.log(imageRequest)
+          var encodedrequest = btoa(imageRequest)
+          var newimagelink = "https://dsv856zfdr0u5.cloudfront.net/" + encodedrequest
+
+          // console.log(imagelink)
+          // console.log(newimagelink)
+          // console.log("Item image: {{ post.item_image }}")
+          // document.getElementById("myimage").src = newimagelink
+          console.log("{{ post.get_new_url }}")
+      </script>
+      
         <div class = "article-img">
-            <img src="{{ post.item_image.url }}">
+          
+            <img id = "myimage" src="{{ post.get_new_url }}">
         </div>
         
     {% endif %}
