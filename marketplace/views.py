@@ -6,6 +6,8 @@ CreateView,
 UpdateView,  
 DeleteView, 
 )
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from .models import ItemPost
 from django.db.models import Q
 
@@ -22,6 +24,7 @@ def home(request):
 class SearchResultsView(ListView):
     model = ItemPost
     template_name = 'marketplace/search_result.html'
+    paginate_by = 2
     def get_queryset(self):
 
         query = self.request.GET.get('q')
@@ -31,6 +34,28 @@ class SearchResultsView(ListView):
                 )
             return object_list
 
+    #         posts_list = Post.objects.all()
+    # query = request.GET.get('q')
+    # if query:
+    #     posts_list = Post.objects.filter(
+    #         Q(title__icontains=query) | Q(content__icontains=query) |
+    #         Q(user__first_name__icontains=query) | Q(user__last_name__icontains=query)
+    #     ).distinct()
+    # paginator = Paginator(posts_list, 6) # 6 posts per page
+    # page = request.GET.get('page')
+
+    # try:
+    #     posts = paginator.page(page)
+    # except PageNotAnInteger:
+    #     posts = paginator.page(1)
+    # except EmptyPage:
+    #     posts = paginator.page(paginator.num_pages)
+
+    # context = {
+    #     'posts': posts
+    # }
+    # return render(request, "post-list.html", context)
+
 
 
 class PostListView(ListView): 
@@ -38,6 +63,7 @@ class PostListView(ListView):
     template_name = 'marketplace/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 10
 
 
 class PostDetailView(DetailView): 
