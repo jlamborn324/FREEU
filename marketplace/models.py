@@ -10,9 +10,7 @@ def linkconverter(oldlink):
         "bucket":"freeu-images",
         "key": oldlink, 
         "edits": {
-            "resize": {"width":100},
-            "grayscale": True
-            
+            "resize": {"width":100}
         }
     }
     imagerequest = json.dumps(imagerequest, separators=(",", ":"))
