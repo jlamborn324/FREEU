@@ -34,28 +34,6 @@ class SearchResultsView(ListView):
                 )
             return object_list
 
-    #         posts_list = Post.objects.all()
-    # query = request.GET.get('q')
-    # if query:
-    #     posts_list = Post.objects.filter(
-    #         Q(title__icontains=query) | Q(content__icontains=query) |
-    #         Q(user__first_name__icontains=query) | Q(user__last_name__icontains=query)
-    #     ).distinct()
-    # paginator = Paginator(posts_list, 6) # 6 posts per page
-    # page = request.GET.get('page')
-
-    # try:
-    #     posts = paginator.page(page)
-    # except PageNotAnInteger:
-    #     posts = paginator.page(1)
-    # except EmptyPage:
-    #     posts = paginator.page(paginator.num_pages)
-
-    # context = {
-    #     'posts': posts
-    # }
-    # return render(request, "post-list.html", context)
-
 
 
 class PostListView(ListView): 

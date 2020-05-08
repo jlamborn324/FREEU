@@ -47,20 +47,20 @@
                   </form>
               <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
-                    <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+                    <li class="nav-item" >
+                    <a class="nav-link" style="padding: 0%; margin: 7px; float:right"  href="/">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/itempost/new/">POST</a>
+                    <a class="nav-link" style="padding: 0%; margin: 7px;" href="/itempost/new/">POST</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link " href="/logout">LOGOUT</a>
+                    <a class="nav-link " style="padding: 0%; margin: 7px;" href="/logout">LOGOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/chat">MESSAGES</a>
+                        <a class="nav-link " style="padding: 0%; margin: 7px;" href="/chat">MESSAGES</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/profile">PROFILE</a>
+                      <a class="nav-link" style="padding: 0%; margin: 7px;" href="/profile">PROFILE</a>
                       </li>
                     
                 {% else %}    
